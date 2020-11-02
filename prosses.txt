@@ -1,0 +1,226 @@
+1) npm install
+2) npm install locally
+3) app.js file
+4) npm init
+5) npm install express
+6)  make 2 folder views and static
+7) in the make headr file
+
+
+html
+  head
+    title Nahush Dance Academy
+    block scripts
+    block style
+      script(src='/index.js')
+  body
+    nav#navbar
+        ul
+            div#logo
+            li #[a(href="/") rovez]
+            li #[a(href="/") rPool]
+            li #[a(href="/") driver-hire]
+            li #[a(href="/") Car-hire]
+            li #[a(href="/login") login] 
+    block content    
+    footer#footer
+        | Copyright © 2020 rovez.in | All rights reserved
+
+
+
+doctype html
+html
+    head
+        title ROVEZ
+        style
+            include ../static/style.css
+body
+    nav#navbar
+        ul
+            div#logo
+            li #[a(href="/") rovez]
+            li #[a(href="/") rPool]
+            li #[a(href="/") driver-hire]
+            li #[a(href="/") Car-hire]
+
+            div#right
+            li #[a(href="/login") login]
+            
+    section#introSection
+        div#frontt
+            h1 Taxi Hire
+            h6 Rent vehicles with a driver from the best operators
+        div#background 
+footer#footer
+    | Copyright © 2020 nahushdnaceacadumy.com | All rights reserved
+    script
+        include ../static/index.js
+
+
+
+
+        doctype html
+html
+    head
+        title ROVEZ
+        style
+            include ../static/style.css
+body
+    nav#navbar
+        ul
+            div#logo
+            li #[a(href="/") rovez]
+            li #[a(href="/") rPool]
+            li #[a(href="/") driver-hire]
+            li #[a(href="/") Car-hire]
+
+            div#right
+            li #[a(href="/login") login]
+            
+    section#introSection
+        div#frontt
+            h1 Taxi Hire
+            h6 Rent vehicles with a driver from the best operators
+        div#background 
+footer#footer
+    | Copyright © 2020 nahushdnaceacadumy.com | All rights reserved
+    script
+        include ../static/index.js
+
+
+
+
+        const express = require("express");
+const path = require("path");
+// const fs = require("fs");
+const app = express();
+// const mongoose = require('mongoose');
+// const bodyparser = require("body-parser");
+// mongoose.connect('mongodb://localhost/contactDance', { useNewUrlParser: true, useUnifiedTopology: true });
+const port = 5000;
+
+// define mongoose mongoose.Schema
+// const ContactSchema = new mongoose.Schema({
+//     name: String,
+//     age: String,
+//     Gendar: String,
+//     Phone: String,
+//     email: String,
+//     locality: String,
+// });
+// const Contact = mongoose.model('Contact', ContactSchema);
+
+
+// EXPRESS SPECIFIC STUFF
+app.use('/static', express.static('static')) // For serving static files
+app.use(express.urlencoded())
+
+
+// PUG SPECIFIC STUFF
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html'); // Set the views directory
+
+// ENDPOINTS
+app.get('/', (req, res) => {
+    const params = {}
+    res.status(200).render('index.html', params);
+})
+app.get('/login', (req, res) => {
+    const params = {}
+    res.status(200).render('login.html', params);
+})
+// app.post('/contact', (req, res) => {
+//     const myData = new Contact(req.body);
+//     myData.save().then(() =>{ 
+//         res.send("This Item has been save to the database ")
+//     }).catch(()=>{
+//         res.status(400).send("Item was not saved to the database")
+//     })
+//     // res.status(200).render('contact.pug');
+// })
+
+// START THE SERVER
+app.listen(port, () => {
+    console.log(`The application started successfully on port ${port}`);
+});
+
+
+
+
+BASCI vali file
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nahush Dance Academy</title>
+  <script src="/index.js"></script>
+</head>
+<style>
+  
+</style>
+<body>
+  <nav id="navbar">
+    <ul>
+      <div id="logo"></div>
+      <li class="item"><a href="/views/rovez.html">rovez</a></li>
+      <li class="item"><a href="/views/rpool.html">rPool</a></li>
+      <li class="item"><a href="/views/driver-hire.html">driver-hire</a></li>
+      <li class="item"><a href="/views/car-hire.html">Car-hire</a></li>
+      <div id="right"></div>
+      <li><a href="views/login">login</a></li>
+    </ul>
+  </nav>
+  <footer id="footer">Copyright © 2020 rovez.in | All rights reserved</footer>
+</body>
+
+</html>
+
+
+
+
+
+index vali file
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROVEZ</title>
+  <style>
+    
+  </style>
+  <script src="../static/style.css"></script>
+</head>
+</head>
+
+</html>
+
+<body>
+  <nav id="navbar">
+    <ul>
+      <div id="logo"></div>
+      <li class="item"><a href="/views/rovez.html">rovez</a></li>
+      <li class="item"><a href="/views/rpool.html">rPool</a></li>
+      <li class="item"><a href="/views/driver-hire.html">driver-hire</a></li>
+      <li class="item"><a href="/views/car-hire.html">Car-hire</a></li>
+      <div id="right"></div>
+      <li><a href="views/login">login</a></li>
+    </ul>
+  </nav>
+  <section id="introSection">
+    <div id="frontt">
+      <h1>Taxi Hire</h1>
+      <h6>Rent vehicles with a driver from the best operators</h6>
+    </div>
+    <div id="background"> </div>
+  </section>
+</body>
+<footer id="footer">Copyright © 2020 nahushdnaceacadumy.com | All rights reserved
+  <script></script>
+</footer>

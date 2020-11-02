@@ -1,0 +1,63 @@
+*{
+    /* '*' mhnje reset krte page la  */
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+#navbar {    
+    background-color:black;
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 959px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#navbar li{
+    list-style: none;
+}
+#navbar li a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+#navbar li a:hover{
+    color: red;  
+}    
+#right{
+    padding-left: 480px;
+}
+#frontt{
+    color: black;
+    padding: 81px 220px;
+}
+#frontt h1{
+    padding: 3px;
+    font-weight: bold;
+    font-size: 35px;
+}
+#frontt h6{
+    font-size: 20px;
+    font-weight: bold;
+}
+#background{
+    opacity: 0.02;
+    background: no-repeat;
+    opacity: 0.02;
+    height: -webkit-fill-available;
+    margin: -237px 100px;
+}
+#introSection{
+    background-color: rgb(95 207 241 / 18%);
+    height: 286px;    
+    color: black;
+}
